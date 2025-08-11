@@ -45,7 +45,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 12px black;
 }
 
 .id-picture{
@@ -112,13 +111,75 @@
 }
 
 .education-card{
-    border: 10px solid #DDDAD0;
-    border-radius: 25%;
-    width: 50%;
-    padding: 20px 50px;
+    height: 400px;
+    width: 40%;
+    border:7px solid #F8F3CE;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    text-align: center;
+}
+
+
+.education-card:hover{
+    box-shadow: 0 0 20px #7A7A73;
+    transition: all 0.3s ease-in-out;
+    background-color: #F8F3CE;
+    color: #57564F;
+}
+
+#contact-me .container{
+    flex-direction: column;
+}
+
+#contact-me .container h1{
+    font-size: 3rem;
+    font-weight: bold;
     margin: 20px;
 }
 
-.education-card:hover{
-
+.contact-me-container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
+
+
+button{
+    background-color: #F8F3CE;
+    color:#57564F;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;   
+}
+
+.email-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #57564F;
+  color: #F8F3CE;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer{
+    height: 50px;
+    background-color: #F8F3CE;
+    color: #7A7A73;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    
+}
+
