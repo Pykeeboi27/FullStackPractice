@@ -71,3 +71,5 @@ function buttonAnimation(currentKey){
         activeButton.classList.remove("pressed");;
     }, 100); // 3000 milliseconds = 3 seconds
 }
+
+//just for the streak since ill be working on this later but i still want to commit my progress
