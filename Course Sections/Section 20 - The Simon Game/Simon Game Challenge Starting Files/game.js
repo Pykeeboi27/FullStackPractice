@@ -55,7 +55,7 @@ function gameOver(){
         $("body").removeClass("game-over");
     }, 100);
 
-    $("#level-title").text("Game Over, Press 'A' to Restart");
+    $("#level-title").text("Game Over, Press 'A' or tap the screen to Restart");
     playSound("wrong");
 
     gameReset();
@@ -69,9 +69,15 @@ function gameReset(){
     level = 0;
 }
 function game(){
-    $(document).on("keydown", function(event){
+    $(document).on("keydown", start);
+    $(document).on("touchstart", start);
+    
+}
+
+function start (event){
         if(event.key === "a"){
             $(document).off("keydown");
+            $(document).off("touchstart");
             nextSequence();
             
             $(".btn").on("click", function(){
@@ -88,8 +94,7 @@ function game(){
             });
              
         }
-    });
-}
+    }
 
 
 game();
