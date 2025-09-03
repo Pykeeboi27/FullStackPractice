@@ -68,33 +68,46 @@ function gameReset(){
     gamePattern = [];
     level = 0;
 }
+
 function game(){
     $(document).on("keydown", start);
     $(document).on("touchstart", start);
     
 }
 
-function start (event){
-        if(event.key === "a"){
-            $(document).off("keydown");
-            $(document).off("touchstart");
-            nextSequence();
-            
-            $(".btn").on("click", function(){
-                const currentButton = this.id;
-                $("." + currentButton).addClass("pressed");
-
-                setTimeout(function() {
-                    $("." + currentButton).removeClass("pressed");
-                }, 100);
-                userClickedPattern.push(currentButton);
-
-                console.log(userClickedPattern );
-                checkGame(userClickedPattern.length - 1);       
-            });
-             
-        }
+function start(event) {
+    // If triggered by keyboard
+    if (event.type === "keydown" && event.key === "a") {
+        $(document).off("keydown");
+        $(document).off("touchstart");
+        initGame();
     }
+
+    // If triggered by touch
+    if (event.type === "touchstart") {
+        $(document).off("keydown");
+        $(document).off("touchstart");
+        initGame();
+    }
+}
+
+function initGame() {
+    nextSequence();
+
+    $(".btn").on("click", function () {
+        const currentButton = this.id;
+        $("." + currentButton).addClass("pressed");
+
+        setTimeout(function () {
+            $("." + currentButton).removeClass("pressed");
+        }, 100);
+
+        userClickedPattern.push(currentButton);
+        console.log(userClickedPattern);
+        checkGame(userClickedPattern.length - 1);
+    });
+}
+
 
 
 game();
