@@ -98,6 +98,8 @@ function initGame() {
         const currentButton = this.id;
         $("." + currentButton).addClass("pressed");
 
+        playSound(currentButton);
+        
         setTimeout(function () {
             $("." + currentButton).removeClass("pressed");
         }, 100);
