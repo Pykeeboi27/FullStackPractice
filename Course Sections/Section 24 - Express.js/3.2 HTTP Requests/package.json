@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jiroh Carpio",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^5.1.0"
   }
 }
